@@ -25,10 +25,10 @@ class RepositoryList extends Component<Props> {
 
   render() {
     const { repositories } = this.props;
-
+    
     return (
       <ul>
-        {repositories.map(repository => repository.id)}
+        {repositories.map(repository => <li>{ repository.name }</li>)}
       </ul>
     );
   }
