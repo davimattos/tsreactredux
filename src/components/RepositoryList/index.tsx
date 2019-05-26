@@ -5,6 +5,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { Repository } from '../../store/ducks/repositories/types';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
 import { ApplicationState } from '../../store';
+import RepositoryItem from '../RepositoryItem';
 
 interface StateProps{
   repositories: Repository[]
@@ -28,7 +29,9 @@ class RepositoryList extends Component<Props> {
     
     return (
       <ul>
-        {repositories.map(repository => <li key={ repository.id }>{ repository.name }</li>)}
+        {repositories.map(repository => (
+          <RepositoryItem key={repository.id} repository={repository} />
+        ))}
       </ul>
     );
   }
